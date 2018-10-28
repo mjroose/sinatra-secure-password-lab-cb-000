@@ -20,6 +20,7 @@ class ApplicationController < Sinatra::Base
     if params[:username] == ""
       redirect to '/failure'
     end
+    
     user = User.new(username: params[:username], password: params[:password])
 
     if user.save
