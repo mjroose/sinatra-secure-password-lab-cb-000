@@ -20,6 +20,7 @@ class ApplicationController < Sinatra::Base
     user = User.new(params[:username], params[:password])
 
     if user.save
+      binding.pry
       session[:user_id] = user.id
       redirect to '/login'
     else
