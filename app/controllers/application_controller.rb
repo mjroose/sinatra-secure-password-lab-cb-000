@@ -18,7 +18,7 @@ class ApplicationController < Sinatra::Base
 
   post "/signup" do
     binding.pry
-    user = User.new(params[:username], params[:password])
+    user = User.new(username: params[:username], password: params[:password])
 
     if user.save
       session[:user_id] = user.id
